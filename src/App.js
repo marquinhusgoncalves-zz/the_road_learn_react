@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
-
-const DEFAULT_QUERY = 'redux';
-const DEFAULT_HPP = '100';
-
-const PATH_BASE = 'https://hn.algolia.com/api/v1';
-const PATH_SEARCH = '/search';
-const PARAM_SEARCH = 'query=';
-const PARAM_PAGE = 'page=';
-const PARAM_HPP = 'hitsPerPage=';
+import Table from '../src/components/Table';
+import Button from '../src/components/Button'
+;import {
+  DEFAULT_QUERY,
+  DEFAULT_HPP,
+  PATH_BASE,
+  PATH_SEARCH,
+  PARAM_SEARCH,
+  PARAM_PAGE,
+  PARAM_HPP
+} from '../src/constants';
 
 // const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}`;
 
@@ -189,74 +191,6 @@ class Search extends Component {
           {children}
         </button>
       </form>
-    );
-  }
-}
-
-class Table extends Component {
-  render() {
-    const {
-      list,
-      onDismiss
-    } = this.props;
-
-    const largeColumn = {
-      width: '40%'
-    };
-    const midColumn = {
-      width: '30%'
-    };
-    const smallColumn = {
-      width: '10%'
-    };
-
-    return (
-      <div className="table">
-        {list.map(item =>
-          <div key={item.objectID} className="table-row">
-            <span style={largeColumn}>
-              <a href={item.url}>{item.title}</a>
-            </span>
-            <span style={midColumn}>
-              {item.author}
-            </span>
-            <span style={smallColumn}>
-              {item.num_comments}
-            </span>
-            <span style={smallColumn}>
-              {item.points}
-            </span>
-            <span style={smallColumn}>
-              <Button
-                onClick={() => onDismiss(item.objectID)}
-                className="button-inline"
-                >
-                Dismiss
-              </Button>
-            </span>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
-
-class Button extends Component {
-  render() {
-    const {
-      onClick,
-      className = '',
-      children
-    } = this.props;
-
-    return (
-      <button
-        onClick={onClick}
-        className={className}
-        type="button"
-      >
-        {children}
-      </button>
     );
   }
 }
