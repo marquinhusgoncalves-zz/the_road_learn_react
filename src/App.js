@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
+import Search from '../src/components/Search';
 import Table from '../src/components/Table';
 import Button from '../src/components/Button'
 ;import {
@@ -167,30 +168,6 @@ class App extends Component {
           </Button>
         </div>
       </div>
-    );
-  }
-}
-
-class Search extends Component {
-  render() {
-    const {
-      value,
-      onChange,
-      onSubmit,
-      children
-    } = this.props;
-
-    return (
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          value={value}
-          onChange={onChange}
-        />
-        <button type="submit">
-          {children}
-        </button>
-      </form>
     );
   }
 }
