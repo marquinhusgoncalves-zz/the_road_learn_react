@@ -14,11 +14,6 @@ import Button from '../src/components/Button'
   PARAM_HPP
 } from '../src/constants';
 
-// const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}`;
-
-// const isSearched = searchTerm => item =>
-//   item.title.toLowerCase().includes(searchTerm.toLowerCase());
-
 class App extends Component {
   _isMounted = false;
 
@@ -84,11 +79,6 @@ class App extends Component {
     event.preventDefault();
   }
 
-  // onDismiss(id) {
-  //   const updateList = this.state.list.filter(item => item.objectID !== id);
-  //   this.setState({list: updateList});
-  // }
-
   onDismiss(id) {
     const {searchKey, results} = this.state;
     const {hits, page} = results[searchKey];
@@ -132,14 +122,6 @@ class App extends Component {
       results[searchKey] &&
       results[searchKey].hits
     ) || [];
-
-    // if (!results) {
-    //   return null;
-    // }
-
-    // if (error) {
-    //   return <p>Something went wrong.</p>;
-    // }
 
     return (
       <div className="page">
