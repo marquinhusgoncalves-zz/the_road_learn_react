@@ -1,6 +1,18 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Button extends Component {
+  static displayName = 'Button';
+  static propTypes = {
+    onClick: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired
+  }
+
+  static defaultProps = {
+    className: ''
+  }
+
   render() {
     const {
       onClick,
@@ -19,5 +31,6 @@ class Button extends Component {
     );
   }
 }
+
 
 export default Button;
