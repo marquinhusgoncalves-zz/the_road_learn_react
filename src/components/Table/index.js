@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 
 class Table extends Component {
+  static displayName = 'Table';
   static propTypes = {
     list: PropTypes.array.isRequired,
     onDismiss: PropTypes.func.isRequired

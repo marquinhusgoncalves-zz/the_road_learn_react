@@ -1,6 +1,19 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
+  static displayName = 'Search';
+  static propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired
+  }
+
+  static defaultProps = {
+    className: ''
+  }
+
   render() {
     const {
       value,
