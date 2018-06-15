@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 
 class Table extends Component {
+  static propTypes = {
+    list: PropTypes.array.isRequired,
+    onDismiss: PropTypes.func.isRequired
+  }
+
   render() {
     const {
       list,
