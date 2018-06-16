@@ -14,6 +14,12 @@ class Search extends Component {
     className: ''
   }
 
+  componentDidMount() {
+    if (this.input) {
+      this.input.focus();
+    }
+  }
+
   render() {
     const {
       value,
@@ -28,6 +34,9 @@ class Search extends Component {
           type="text"
           value={value}
           onChange={onChange}
+          ref={(node) => {
+            this.input = node;
+          }}
         />
         <button type="submit">
           {children}
