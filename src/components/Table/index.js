@@ -6,7 +6,7 @@ class Table extends Component {
   static displayName = 'Table';
   static propTypes = {
     list: PropTypes.array.isRequired,
-    onDismiss: PropTypes.func.isRequired
+    onDismiss: PropTypes.func
   }
 
   render() {
